@@ -1,12 +1,12 @@
 # lifecycle_course
 
-### Nommenclature des branches
+### Nomenclature des branches
 
 >* feature/FEATURE_NAME
 >* bugfix/BUGFIX_NAME
 >* hotfix/HOTFIX_NAME
 
-### Nommenclature des commits
+### Nomenclature des commits
 
 >[FEATURE || BUGFIX || HOTFIX || CHORE] Description de la feature en moins de 50 caractères.
 
