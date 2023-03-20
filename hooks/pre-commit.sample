@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Define the regex pattern to match the commit message against
+pattern="^\[(FEATURE|BUGFIX|CHORE|HOTFIX)\] .{1,50}$"
+
+# Read the commit message from stdin
+commit_msg=$(cat "$1" 2>/dev/null || echo "$(</dev/stdin)")
+
+echo "Commit message file: $1"
+echo "Commit message contents: $(cat "$1" 2>/dev/null)"
+echo "Stdin contents: $(</dev/stdin)"
+
+# Check if the commit message matches the required pattern
+if ! echo "$commit_msg" | grep -iqE "$pattern"; then
+    echo "Error: Commit message does not follow the required format"
+    echo "Commit message should start with either [FEATURE] or [BUGFIX], followed by a space and then a brief description of the change (50 characters or less)."
+    exit 1
+fi

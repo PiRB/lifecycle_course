@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Define the regular expression to check the branch name against
+BRANCH_REGEX="^(feature|hotfix|bugfix|chore)\/[A-Za-z0-9_-]+$"
+
+# Get the current branch name
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+
+# Check if the branch name matches the defined regular expression
+if ! [[ $BRANCH_NAME =~ $BRANCH_REGEX ]]; then
+    echo "Error: Branch name '$BRANCH_NAME' does not follow naming convention."
+    exit 1
+fi

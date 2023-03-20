@@ -1,5 +1,11 @@
 # lifecycle_course
 
+## Setup
+
+* Installation des git hooks
+> à la racine du projet exécuter cette commande pour installer les git hooks:
+>* cp -a ./hooks/. .git/hooks/
+
 ### Nomenclature des branches
 
 >* feature/FEATURE_NAME
